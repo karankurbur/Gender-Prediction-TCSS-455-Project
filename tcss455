@@ -1,0 +1,31 @@
+#!/bin/bash
+
+echo "********************************************"
+echo "Flags:"
+while getopts "i:o:" opt; do
+  case $opt in
+    i)
+      echo "-i was triggered, Parameter: $OPTARG" >&2
+      input=$OPTARG
+      ;;
+    o)
+      echo "-o was triggered, Parameter: $OPTARG" >&2
+      output=$OPTARG
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+echo "********************************************"
+
+echo "Calling basline script with input $input and output $output"
+python baseline.py -i $input -o $output
+
+echo "Calling output syntax test script with outputs located in $output"
+python test_output_format.py -o $output
