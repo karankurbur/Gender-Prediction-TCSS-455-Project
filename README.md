@@ -1,5 +1,5 @@
 # Project Notes
-Josh Lau, Matt Phillips / TCSS 455 Machine Learning / Martine de Cock / Jan 11 2018
+Karan Kurbur, Josh Lau, Matt Phillips / TCSS 455 Machine Learning / Martine de Cock / Jan 11 2018
 
 *Usage*
 
